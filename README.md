@@ -10,9 +10,12 @@
    * pendding add
    * [文档目录结构](#directory)
 
-#### 4. 版权声明
-#### 5. 技术交流群
-#### 6. 关于作者及贡献者
+#### 4. [版权声明](#copyright)
+#### 5. [技术交流群](#communication)
+#### 6. [关于作者及贡献者](#acout)
+  * [Jsoup 作者](#about_jsoup)
+  * [本文档贡献者](#about_contributor)
+  * [本文档作者](#about_me)
 
 <a name="intro"></a>
 ## 规范概述
@@ -26,9 +29,10 @@
 --------|------|
 当前版本 | v1.0 beta
 规范发起 | [bluetata](http://blog.csdn.net/dietime1943/)
-参与人群 |
+参与人群 | Jimmy
 最后更新 | 2017/06/27
 
+<a name="copyright"></a>
 ## 版权声明
 
 * 所有原创文章(未进行特殊标识的均属于原创) 的著作权属于 **bluetata**。
@@ -46,6 +50,19 @@
 * 商业用途请点击最下面图片联系本人。
 * 微信公众号转载一律不授权 `原创` 标志。
 
+<a name="communication"></a>
 ## 技术交流群
 
 QQ群：50695115
+
+<a name="acout"></a>
+## 关于作者及贡献者
+
+<a name="about_jsoup"></a>
+#### Jsoup 作者
+
+<a name="about_contributor"></a>
+#### 本文档贡献者
+
+<a name="about_me"></a>
+#### 本文档作者
