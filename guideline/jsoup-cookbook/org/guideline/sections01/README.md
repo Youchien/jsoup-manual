@@ -1,4 +1,4 @@
-## Jsoup 数据输入与输出
+## Jsoup 输入与输出
 
 ### 实例过程
 **这是一个非常简单的示例：**
@@ -22,7 +22,7 @@
 
 ### 实例说明
 * Jsoup 是所有数据操作的入口
-* Jsoup 将输出完整HTML数据格式。 
+* Jsoup 将输出完整HTML数据格式。
 
 #### Jsoup 数据输入
 
@@ -31,24 +31,24 @@
 	* 一个文件 （File）
 	* 一个URL
 	* 一个Inputstream 的输入流
-	
+
 **示例演示**
 ```
     Document doc = null;
         try {
-            // 输入一个 HTML 片段 
+            // 输入一个 HTML 片段
             String html = "<html><head><title>First parse</title></head><body><p>Parsed HTML into a doc.</p></body></html>";
             doc = Jsoup.parse(html);
-            
+
             // 输入一个文件,指定其编码
             doc = Jsoup.parse(new File("resources/index.html"), "utf-8");
-            
+
             //输入一个URL,指定其超时时间
             doc = Jsoup.parse(new URL("http://www.baidu.com"), 1000);
-            
+
             //输一个HTTP地址,等价同上
             doc = Jsoup.connect("http://www.baidu.com").get();
-            
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -81,5 +81,3 @@
 * 隐式标签 (比如. 它可以自动将 `<td>Table data</td>`包装成`<table><tr><td>?`)
 * 创建可靠的文档结构（html标签包含head 和 body，在head只出现恰当的元素）
 * HTML 实体转义($、<、> 转化为HTML格式)
-
-
