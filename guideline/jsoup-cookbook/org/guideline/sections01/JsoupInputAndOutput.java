@@ -22,9 +22,9 @@ public class JsoupInputAndOutput {
                           // "   <head>" +
                              "     <title>JsoupInputAndOutput</title>" +
                              "   </head>" +
-                             "   <body>" +
+                          // "   <body>" +
                              "     <h1>Hello World!</h1>" +
-                             "   </body>" +
+                          // "   </body>" +
                              " </html>";
         Document doc1 = Jsoup.parse(htmlText);
         System.out.println(doc1.html());

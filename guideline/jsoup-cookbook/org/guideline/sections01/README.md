@@ -65,15 +65,29 @@ public static void jsoupIOTest01(){
                       // "   <head>" +
                          "     <title>JsoupInputAndOutput</title>" +
                          "   </head>" +
-                         "   <body>" +
+                      // "   <body>" +
                          "     <h1>Hello World!</h1>" +
-                         "   </body>" +
+                      // "   </body>" +
                          " </html>";
     Document doc1 = Jsoup.parse(htmlText);
     System.out.println(doc1.html());
 }
 ```
-	2. 解析一个html文件
+代码输出结果：
+```
+<html>
+ <head>
+  <title>JsoupInputAndOutput</title>
+ </head>
+ <body>
+  <h1>Hello World!</h1>  
+ </body>
+</html>
+```
+从代码输出结果可以看出：
+Jsoup在解析代码片段的时候可以补全基本的html标准格式，即使是html中缺失了head等标签。
+
+ 2. 解析一个html文件
 
 
 **相关数据输入方法**
