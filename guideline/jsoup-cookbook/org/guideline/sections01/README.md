@@ -61,16 +61,16 @@
 ```
 public static void jsoupIOTest01(){
 
-        String htmlText = // " <html>" +
-                          // "   <head>" +
-                             "     <title>JsoupInputAndOutput</title>" +
-                             "   </head>" +
-                             "   <body>" +
-                             "     <h1>Hello World!</h1>" +
-                             "   </body>" +
-                             " </html>";
-        Document doc1 = Jsoup.parse(htmlText);
-        System.out.println(doc1.html());
+    String htmlText = // " <html>" +
+                      // "   <head>" +
+                         "     <title>JsoupInputAndOutput</title>" +
+                         "   </head>" +
+                         "   <body>" +
+                         "     <h1>Hello World!</h1>" +
+                         "   </body>" +
+                         " </html>";
+    Document doc1 = Jsoup.parse(htmlText);
+    System.out.println(doc1.html());
 }
 ```
 	2. 解析一个html文件
