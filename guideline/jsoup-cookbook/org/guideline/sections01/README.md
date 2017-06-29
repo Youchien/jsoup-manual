@@ -1,5 +1,5 @@
 ## Jsoup 输入与输出
-
+<!--
 ### 实例过程
 **这是一个非常简单的示例：**
 * 输入一个不完整HTML代码片段
@@ -23,17 +23,20 @@
 ### 实例说明
 * Jsoup 是所有数据操作的入口
 * Jsoup 将输出完整HTML数据格式。
+-->
 
 #### Jsoup 数据输入
 
-* Jsoup 数据输入
-	* 一个字符串 （HTML的代码片段）
+* Jsoup 输入
+	* 一个HTML字符串 （HTML代码片段）
 	* 一个文件 （File）
 	* 一个URL
 	* 一个Inputstream 的输入流
 
 **示例演示**
-```
+
+  1. 解析html字符串
+<!--
     Document doc = null;
         try {
             // 输入一个 HTML 片段
@@ -52,8 +55,26 @@
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // 使用Document对象 进行数据提取或遍历  
+        // 使用Document对象 进行数据提取或遍历
+
+				-->
 ```
+public static void jsoupIOTest01(){
+
+        String htmlText = // " <html>" +
+                          // "   <head>" +
+                             "     <title>JsoupInputAndOutput</title>" +
+                             "   </head>" +
+                             "   <body>" +
+                             "     <h1>Hello World!</h1>" +
+                             "   </body>" +
+                             " </html>";
+        Document doc1 = Jsoup.parse(htmlText);
+        System.out.println(doc1.html());
+}
+```
+	2. 解析一个html文件
+
 
 **相关数据输入方法**
 * parse(String html)

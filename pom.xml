@@ -10,11 +10,6 @@
   <name>jsoup-cookbook-guideline</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jsoup.version>1.10.2</jsoup.version>
-  </properties>
-
   <build>
     <plugins>
       <plugin>
@@ -28,6 +23,12 @@
       </plugin>
     </plugins>
   </build>
+  
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jsoup.version>1.10.2</jsoup.version>
+  </properties>
 
   <dependencies>
     <dependency>
