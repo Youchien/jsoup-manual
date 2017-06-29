@@ -36,7 +36,7 @@
 **示例演示**
 
   <a name='input01'></a>
-  **1. 解析html字符串**
+  **1. 解析解析html字符串**
 <!--
     Document doc = null;
         try {
@@ -86,7 +86,7 @@ public static void jsoupIOTest01(){
 </html>
 ```
 从代码输出结果可以看出：
-Jsoup在解析代码片段的时候可以补全基本的html标准格式，即使是html中缺失了head等标签。
+Jsoup在解析代码片段的时候可以补全基本的html标准格式，即使html块中缺失了head，body等标签。
 
   <a name='input02'></a>
 	**2. 解析一个html文件**
