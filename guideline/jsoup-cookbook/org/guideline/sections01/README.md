@@ -28,14 +28,15 @@
 #### Jsoup 数据输入
 
 * Jsoup 输入
-	* 一个HTML字符串 （HTML代码片段）
-	* 一个文件 （File）
+	* [一个HTML字符串 （HTML代码片段）](#input01)
+	* [一个文件 （File）](#input02)
 	* 一个URL
 	* 一个Inputstream 的输入流
 
 **示例演示**
 
-  1. 解析html字符串
+  <a name='input01'></a>
+  **1. 解析html字符串**
 <!--
     Document doc = null;
         try {
@@ -87,7 +88,8 @@ public static void jsoupIOTest01(){
 从代码输出结果可以看出：
 Jsoup在解析代码片段的时候可以补全基本的html标准格式，即使是html中缺失了head等标签。
 
- 2. 解析一个html文件
+  <a name='input02'></a>
+	**2. 解析一个html文件**
 
 
 **相关数据输入方法**
