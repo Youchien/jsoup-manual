@@ -1,29 +1,4 @@
 ## Jsoup 输入与输出
-<!--
-### 实例过程
-**这是一个非常简单的示例：**
-* 输入一个不完整HTML代码片段
-```
-<html><head><title>First parse</title></head>"  + "<body><p>Parsed HTML into a doc.</p></body></html>
-```
-* 中间无任何操作
-* 结果数据：
-```
-<html>
- <head>
-  <title>First parse</title>
- </head>
- <body>
-  <p>Parsed HTML into a doc.</p>
-  <br>
- </body>
-</html>
-```
-
-### 实例说明
-* Jsoup 是所有数据操作的入口
-* Jsoup 将输出完整HTML数据格式。
--->
 
 #### Jsoup 数据输入
 
@@ -35,30 +10,9 @@
 
 **示例演示**
 
-  <a name='input01'></a>
+  <a name="input01"></a>
   **1. 解析解析html字符串**
-<!--
-    Document doc = null;
-        try {
-            // 输入一个 HTML 片段
-            String html = "<html><head><title>First parse</title></head><body><p>Parsed HTML into a doc.</p></body></html>";
-            doc = Jsoup.parse(html);
 
-            // 输入一个文件,指定其编码
-            doc = Jsoup.parse(new File("resources/index.html"), "utf-8");
-
-            //输入一个URL,指定其超时时间
-            doc = Jsoup.parse(new URL("http://www.baidu.com"), 1000);
-
-            //输一个HTTP地址,等价同上
-            doc = Jsoup.connect("http://www.baidu.com").get();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // 使用Document对象 进行数据提取或遍历
-
-				-->
 ```
 public static void jsoupIOTest01(){
 
@@ -88,7 +42,7 @@ public static void jsoupIOTest01(){
 从代码输出结果可以看出：
 Jsoup在解析代码片段的时候可以补全基本的html标准格式，即使html块中缺失了head，body等标签。
 
-  <a name='input02'></a>
+  <a name="input02"></a>
 	**2. 解析一个html文件**
 
 

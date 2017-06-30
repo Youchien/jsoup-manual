@@ -57,11 +57,11 @@ public class JsoupInputAndOutput {
     public static void jsoupIOTest03() throws IOException{
 
         // https://github.com/jhy/jsoup/issues/440
-        Connection.Response res = Jsoup.connect("http://direct.infohound.net/tools/charset-base.html").execute();
+        Connection.Response res = Jsoup.connect("https://ang.wikipedia.org/").execute();
         Document doc = res.parse();
         // assertEquals("http://example.com/foo.jpg", doc.select("img").first().absUrl("src"));
         
-        System.out.println(doc.select("img").first().absUrl("src"));
+        System.out.println(doc);
         
        }
 
