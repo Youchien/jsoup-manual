@@ -68,7 +68,7 @@ HTML文件：
 ```
 public static void jsoupIOTest02() throws IOException{
 
-	String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
+    String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
 	File in = new File(fileName);
 	Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/");
 
