@@ -44,7 +44,7 @@ public class JsoupInputAndOutput {
 
         String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
         File in = new File(fileName);
-        Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/bluetata/");
+        Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/");
 
         System.out.println(doc.select("img").first().absUrl("src"));
         System.out.println(doc.select("a[href]").first().absUrl("href"));

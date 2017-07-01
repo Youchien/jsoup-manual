@@ -13,6 +13,7 @@
   <a name="input01"></a>
   **1. 解析解析html字符串**
 
+代码示例：
 ```
 public static void jsoupIOTest01(){
 
@@ -44,6 +45,42 @@ Jsoup在解析代码片段的时候可以补全基本的html标准格式，即�
 
   <a name="input02"></a>
 	**2. 解析一个html文件**
+
+HTML文件：
+```
+<!-- HTML file -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JsoupInputTest</title>
+        <meta charset="UTF-8">
+    </head>
+    <!-- <base href="http://example.com" /> -->
+    <body>
+        <div id="mydiv">test parsing input file by jsoup</div>
+        <img src="/img.jpg">
+        <a href="/a.jpg">s1 test</a>
+    </body>
+</html>
+```
+
+代码示例：
+```
+	public static void jsoupIOTest02() throws IOException{
+
+			String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
+			File in = new File(fileName);
+			Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/");
+
+			System.out.println(doc.select("img").first().absUrl("src"));
+			System.out.println(doc.select("a[href]").first().absUrl("href"));
+
+			System.out.println("====================================");
+
+			System.out.println(doc.html());
+	}
+```
+
 
 
 **相关数据输入方法**
