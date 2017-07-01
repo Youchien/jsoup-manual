@@ -68,16 +68,16 @@ HTML文件：
 ```
 public static void jsoupIOTest02() throws IOException{
 
-		String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
-		File in = new File(fileName);
-		Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/");
+    String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
+    File in = new File(fileName);
+    Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/");
 
-		System.out.println(doc.select("img").first().absUrl("src"));
-		System.out.println(doc.select("a[href]").first().absUrl("href"));
+    System.out.println(doc.select("img").first().absUrl("src"));
+    System.out.println(doc.select("a[href]").first().absUrl("href"));
 
-		System.out.println("====================================");
+    System.out.println("====================================");
 
-		System.out.println(doc.html());
+    System.out.println(doc.html());
 }
 ```
 打印结果：
