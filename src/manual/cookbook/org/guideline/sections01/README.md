@@ -80,8 +80,30 @@ HTML文件：
 			System.out.println(doc.html());
 	}
 ```
+打印结果：
+```
+https://github.com/img.jpg
+https://github.com/a.jpg
+====================================
+<!-- HTML file --><!doctype html>
+<html>
+ <head>
+  <title>JsoupInputTest</title>
+  <meta charset="UTF-8">
+ </head>
+ <!-- <base href="http://example.com" /> -->
+ <body>
+  <div id="mydiv">
+   test parsing input file by jsoup
+  </div>
+  <img src="/img.jpg">
+  <a href="/a.jpg">s1 test</a>  
+ </body>
+</html>
+```
+**示例总结：** 该示例使用了API`parse(File in, String charsetName, String baseUri)`第三个参数为baseURI,就如同HTML文件中`<img src="/img.jpg">`在实际网站中，有的图片，超链接，js文件以及CSS会使用相对路径，使用Jsoup的该带有baseURI方法时，Jsoup会**隐式的**将该baseURI和相对路径进行拼接成一个完整的绝对路径，注意是隐式的，也就是说，它不会真正的改变输出的DOM对象，而是你在调用Jsoup 相关API 获取其超链接或者图片等地的时候，返回的Jsoup对象，带有其和baseURI拼接后的完整链接，这也就是为什么我们看到打印结果中，获取的图片地址为完整的绝对路径，而打印的html仍然和html文件保持一致。
 
-
+**另外:** 在HTML文件中如果已经有`<base href="http://example.com" />`指定了baseURI，那么**Jsoup会以原HTML文件中的URI为基准**，也就是说，如果原HTML中指定了URI那么即使你调用了带有baseUri的方法，并且指定了另一个URI，那么Jsoup隐式解析出来的RUL仍然是和原来HTML中的URI拼接后的完整绝对路径。如果示例中，如果取消注释`base`标签，在代码中指定了的uri为：`https://github.com/`，那么在输出打印的时候，获取到的图片完整链接为：`http://example.com/img.jpg`而不会是`https://github.com/img.jpg`。
 
 **相关数据输入方法**
 * parse(String html)
