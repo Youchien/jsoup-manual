@@ -17,7 +17,7 @@ public class JsoupInputAndOutput {
 
        // jsoupIOTest01();
         try {
-            jsoupIOTest02();
+            jsoupIOTest03();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -56,12 +56,19 @@ public class JsoupInputAndOutput {
     
     public static void jsoupIOTest03() throws IOException{
 
-        // https://github.com/jhy/jsoup/issues/440
-        Connection.Response res = Jsoup.connect("https://ang.wikipedia.org/").execute();
-        Document doc = res.parse();
-        // assertEquals("http://example.com/foo.jpg", doc.select("img").first().absUrl("src"));
+        String h = "<dl class='test'>" +
+                   "  <dt>"+
+                   "    Category"+
+                   "  </dt>"+
+                   "  <dd> "+
+                   "    <a href='/free'>Free</a>" + 
+                   "  </dd> ";
+        Document d = Jsoup.parse(h);
+        String s = d.select("dl > dt").html();
+        String s2 = d.select("a").first().parent().previousElementSibling().html();
+        System.out.println(s);
+        System.out.println(s2);
         
-        System.out.println(doc);
         
        }
 
