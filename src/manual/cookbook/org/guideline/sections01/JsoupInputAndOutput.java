@@ -1,12 +1,16 @@
 package org.guideline.sections01;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+import org.jsoup.parser.Parser;
 
 /**
  * Session01:Jsoup 数据输入与输出
@@ -15,7 +19,7 @@ public class JsoupInputAndOutput {
 
     public static void main(String[] args) {
 
-        jsoupIOTest03();
+        jsoupIOTest04_2();
     }
 
     public static void jsoupIOTest01() {
@@ -55,5 +59,32 @@ public class JsoupInputAndOutput {
             e.printStackTrace();
         }
     }
+    
+    public static void jsoupIOTest04_1() {
+        // 效率最快的方式进行读文件成input流后，Jsoup进行解析。
+        InputStream input = null;
+        Document doc = null;
+        try {
+            input = new DataInputStream(new BufferedInputStream(new FileInputStream("../jsoup-manual-cookbook/src/manual/resources/section01.txt")));
+            doc = Jsoup.parse(input, "UTF-8", "https://github.com/", Parser.htmlParser());  
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }  
+        System.out.println(doc);  
+    }
+    
+    public static void jsoupIOTest04_2() {
+        Document doc = null;
+        String url = "http://www.csdn.net/";
+        try {
+            doc = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }  
+        System.out.println(doc);  
+    }
+    
+    
 
 }

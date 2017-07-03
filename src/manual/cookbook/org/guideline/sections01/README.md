@@ -121,7 +121,41 @@ public static void jsoupIOTest03() {
 }
 ```
 **解释说明:** connect(String url) 方法创建一个新的 Connection,timeout(int millis) 设置超时时间,userAgent(String userAgent)设置浏览器user-Agent的,userAgent更加详细的讲解可以参看:「[浏览器的UserAgent大全](http://blog.csdn.net/dietime1943/article/details/62433531)」关于和get() 取得和解析一个HTML文件。如果从该URL获取HTML时发生错误，便会抛出 IOException, 应适当的进行处理。  
-该示例为get()方式进行模拟浏览器进行提交,另一种方式为post()方式进行提交，详细参照：<a href ="http://blog.csdn.net/dietime1943/article/details/73294442" target="_blank">模拟浏览器：post方式模拟登陆获取网页数据（二）</a>
+该示例为get()方式进行模拟浏览器进行提交,另一种方式为post()方式进行提交，详细参照：[模拟浏览器：post方式模拟登陆获取网页数据（二）](http://blog.csdn.net/dietime1943/article/details/73294442)
+
+**3. 加载解析一个数据流**
+基础API方法：`parse(InputStream in, String charsetName, String baseUri)`
+拓展API方法：` 	parse(InputStream in, String charsetName, String baseUri, Parser parser)`
+
+**代码示例01：** 读取一个流文件
+```
+public static void jsoupIOTest04_1() {
+    // 效率最快的方式进行读文件成input流后，Jsoup进行解析。
+    InputStream input = null;
+    Document doc = null;
+    try {
+        input = new DataInputStream(new BufferedInputStream(new FileInputStream("../jsoup-manual-cookbook/src/manual/resources/section01.txt")));
+        doc = Jsoup.parse(input, "UTF-8", "https://github.com/", Parser.htmlParser());  
+        input.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }  
+    System.out.println(doc);  
+}
+```
+**代码示例02：** 另一种应用，加载一个URL转换成流，并且进行转码后利用Jsoup进行解析。
+```
+public static void jsoupIOTest04_2() {
+    Document doc = null;
+    String url = "http://www.csdn.net/";
+    try {
+        doc = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }  
+    System.out.println(doc);  
+}
+```
 
 **相关数据输入方法**
 * parse(String html)
@@ -141,7 +175,7 @@ public static void jsoupIOTest03() {
 * parseBodyFragment(String bodyHtml)
 解析的HTML代码片段，它可能是不完整的（只有一个div或几个p标签）。
 * connect(String url)
-等价于`parse(URL url, int timeoutMillis)`，只需要输入一个HTTP地址。返回`Connection`对象，通过`get()`或`post()`方法获取文档对象。
+等价于`parse(URL url, int timeoutMillis)`，只需要输入一个HTTP地址。返回`Connection`对象，通过`get()`或`post()`方法获取Dom对象。
 
 #### Jsoup 数据输出
 **Jsoup Parser（Dom解析器） 将会去输入的HTML进行词法解析，修复HTML的完整性**
