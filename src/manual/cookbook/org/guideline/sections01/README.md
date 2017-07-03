@@ -120,8 +120,8 @@ public static void jsoupIOTest03() {
     }
 }
 ```
-**解释说明:** connect(String url) 方法创建一个新的 Connection,timeout(int millis) 设置超时时间,userAgent(String userAgent)设置浏览器user-Agent的,userAgent更加详细的讲解可以参看:「![浏览器的UserAgent大全](http://blog.csdn.net/dietime1943/article/details/62433531)」关于和get() 取得和解析一个HTML文件。如果从该URL获取HTML时发生错误，便会抛出 IOException, 应适当的进行处理。  
-该示例为get()方式进行模拟浏览器进行提交,另一种方式为post()方式进行提交，详细参照：![模拟浏览器：post方式模拟登陆获取网页数据（二）](http://blog.csdn.net/dietime1943/article/details/73294442)
+**解释说明:** connect(String url) 方法创建一个新的 Connection,timeout(int millis) 设置超时时间,userAgent(String userAgent)设置浏览器user-Agent的,userAgent更加详细的讲解可以参看:「[浏览器的UserAgent大全](http://blog.csdn.net/dietime1943/article/details/62433531)」关于和get() 取得和解析一个HTML文件。如果从该URL获取HTML时发生错误，便会抛出 IOException, 应适当的进行处理。  
+该示例为get()方式进行模拟浏览器进行提交,另一种方式为post()方式进行提交，详细参照：[模拟浏览器：post方式模拟登陆获取网页数据（二）](http://blog.csdn.net/dietime1943/article/details/73294442)
 
 **相关数据输入方法**
 * parse(String html)
