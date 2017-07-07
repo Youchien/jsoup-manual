@@ -185,3 +185,4 @@ public static void jsoupIOTest04_2() {
 * 隐式标签 (比如. 它可以自动将 `<td>Table data</td>`包装成`<table><tr><td>?`)
 * 创建可靠的文档结构（html标签包含head 和 body，在head只出现恰当的元素）
 * HTML 实体转义($、<、> 转化为HTML格式)
+* 隐式的以uri为base补全html中相对RUL
