@@ -156,6 +156,8 @@ public static void jsoupIOTest04_2() {
     System.out.println(doc);  
 }
 ```
+**示例总结：** 两种方法都是通过parse方法来加载流，并且在加载流的过程中，进行了相应的转码操作，这里应该尽量避免使用`new String(doc.getBytes("ISO8859-1"), "UTF-8")`这种方式进行转码。
+
 
 **相关数据输入方法**
 * parse(String html)
@@ -169,7 +171,7 @@ public static void jsoupIOTest04_2() {
 * parse(InputStream in, String charsetName, String baseUri)
 读取一个输入流，解析为一个文档对象
 * parse(InputStream in, String charsetName, String baseUri, Parser parser)
-读取一个输入流，接受编码格式及其baseUri参数和一个解析器（Parser）
+读取一个输入流，接受编码格式及其baseUri参数和一个解析器（Parser），注意该解析器有两种：HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 * parse(URL url, int timeoutMillis)
 输入一个URL地址，并指定超时时间
 * parseBodyFragment(String bodyHtml)
