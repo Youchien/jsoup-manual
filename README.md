@@ -2,13 +2,13 @@
 
 ### 目录
 
-#### 1. [规范概述](#intro)
-#### 2. [基本信息](#profile)
+#### 1. [规范概述] (#intro)
+#### 2. [基本信息] (#profile)
 #### 3. Cookbook
    * [Jsoup 输入与输出](/src/manual/cookbook/org/guideline/sections01/README.md)
    * [Jsoup 输入输出设置的相关说明](/src/manual/cookbook/org/guideline/sections02/README.md)
    * pendding add
-   * [文档目录结构](#directory)
+   * [文档目录结构] (#directory)
 
 #### 4. [版权声明](#copyright)
 #### 5. [技术交流群](#communication)
