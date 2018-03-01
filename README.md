@@ -60,6 +60,7 @@ QQ群：50695115
 
 <a name="about_jsoup"></a>
 #### Jsoup 作者
+bluetata :
 
 <a name="about_contributor"></a>
 #### 本文档贡献者
