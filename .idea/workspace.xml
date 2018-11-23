@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b25caf84-8679-406e-a098-f0911f7c9e1a" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/.gitkeep" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/.gitkeep" />
       <change beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change beforePath="$PROJECT_DIR$/jsoup-manual.iml" afterPath="$PROJECT_DIR$/jsoup-manual.iml" />
+      <change beforePath="$PROJECT_DIR$/src/manual/main/org/guideline/sections01/JsoupInputAndOutput.java" afterPath="$PROJECT_DIR$/src/main/java/org/guideline/sections01/JsoupInputAndOutput.java" />
+      <change beforePath="$PROJECT_DIR$/src/manual/main/org/guideline/sections01/README.md" afterPath="$PROJECT_DIR$/src/main/java/org/guideline/sections01/README.md" />
+      <change beforePath="$PROJECT_DIR$/src/manual/main/org/guideline/sections02/README.md" afterPath="$PROJECT_DIR$/src/main/java/org/guideline/sections02/README.md" />
+      <change beforePath="$PROJECT_DIR$/src/manual/main/org/guideline/sections09/ParseHTML.java" afterPath="$PROJECT_DIR$/src/main/java/org/guideline/sections09/ParseHTML.java" />
+      <change beforePath="$PROJECT_DIR$/src/manual/resources/section01.html" afterPath="$PROJECT_DIR$/src/main/resources/section01.html" />
+      <change beforePath="$PROJECT_DIR$/src/manual/resources/section01.txt" afterPath="$PROJECT_DIR$/src/main/resources/section01.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/target/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,26 +95,6 @@
               <item name="jsoup-manual" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsoup-manual" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsoup-manual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsoup-manual" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsoup-manual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsoup-manual" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsoup-manual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsoup-manual" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -225,12 +220,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542956309536</updated>
-      <workItem from="1542956315566" duration="193000" />
+      <workItem from="1542956315566" duration="792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193000" />
+    <option name="totallyTimeSpent" value="792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="141" y="-8" width="1467" height="916" extended-state="6" />
