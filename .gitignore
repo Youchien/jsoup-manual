@@ -30,7 +30,7 @@ hs_err_pid*
 out
 gen
 
-# Eclipse
+# Eclipse project files
 .setting
 /target/
 
