@@ -1,4 +1,4 @@
-package org.guideline.sections01;
+package org.jsoup.manual.sections01;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
