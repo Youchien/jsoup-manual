@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.bluetata</groupId>
-  <artifactId>jsoup-cookbook-guideline</artifactId>
+  <artifactId>jsoup-manual</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>jsoup-cookbook-guideline</name>
+  <name>jsoup-manual</name>
   <url>http://maven.apache.org</url>
 
   <build>
@@ -37,5 +37,5 @@
       <version>${jsoup.version}</version>
     </dependency>
   </dependencies>
-  <description>The cookbook/guideline for Jsoup</description>
+  <description>Jsoup Hands-On Book 开发手册</description>
 </project>
