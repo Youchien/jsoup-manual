@@ -84,7 +84,5 @@ public class JsoupInputAndOutput {
         }  
         System.out.println(doc);  
     }
-    
-    
 
 }
