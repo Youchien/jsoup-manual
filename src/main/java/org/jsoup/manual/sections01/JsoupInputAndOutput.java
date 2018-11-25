@@ -76,9 +76,9 @@ public class JsoupInputAndOutput {
     
     public static void jsoupIOTest04_2() {
         Document doc = null;
-        String url = "http://www.csdn.net/";
+        String url = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2017/45/14/25/451425202.html";
         try {
-            doc = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
+            doc = Jsoup.parse(new URL(url).openStream(), "GBK", url);
         } catch (IOException e) {
             e.printStackTrace();
         }  
