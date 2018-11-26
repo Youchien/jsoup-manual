@@ -39,14 +39,14 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 ### Jsoup 输入与输出
 
 #### Jsoup 输入
-  1. [解析一个HTML字符串 （HTML代码片段）](#input01)
-  2. [加载解析一个文件 （File）](#input02)
+  1. [加载解析一个HTML字符串 （HTML代码片段）](#input01)
+  2. [加载解析一个文件（HTML File）](#input02)
   3. [加载解析一个URL](#input03)
-  4. [一个Inputstream 的输入流](#input04)
+  4. [加载解析Inputstream输入流](#input04)
 
 
 <a name="input01"></a>
-**1. 解析解析html字符串**
+**1. 解析解析HTML字符串**
 
 **代码示例：**
 ```java
@@ -79,7 +79,7 @@ public static void jsoupIOTest01(){
 Jsoup在解析代码片段的时候可以补全基本的html标准格式，即使html块中缺失了head，body等标签。
 
 <a name="input02"></a>
-**2. 加载解析一个html文件**
+**2. 加载解析一个文件（HTML File）**
 
 **HTML文件：**
 ```html
@@ -175,10 +175,10 @@ public static void jsoupIOTest03() {
 
 
 <a name="input04"></a>
-**4. 加载解析一个数据流**
+**4. 加载解析Inputstream输入流**
 
-基础API方法：`parse(InputStream in, String charsetName, String baseUri)`
-拓展API方法：` 	parse(InputStream in, String charsetName, String baseUri, Parser parser)`
+基础API方法：`parse(InputStream in, String charsetName, String baseUri)`</br>
+拓展API方法：`parse(InputStream in, String charsetName, String baseUri, Parser parser)`
 
 **代码示例01：** 读取一个流文件
 ```java
