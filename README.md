@@ -16,7 +16,7 @@ QQ交流群：**5**069**5**11**5**
 
 4. [参与贡献者](#contributors)
 5. [交流讨论](#communication)
-6. [版权声明](#copyright)
+6. [版权声明](#license)
 
 <a name="intro"></a>
 ## 文档概述
@@ -265,6 +265,6 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 可以加置顶群讨论交流或发任何问题或者建议于[Issues](https://github.com/bluetata/jsoup-manual/issues)区域
 
 
-<a name="copyright"></a>
-## 版权声明
-除注明外，本Repository均采用 Creative Commons [BY-NC-ND 4.0](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)（自由转载-保持署名-非商用-禁止演绎）协议发布。
+<a name="license"></a>
+## 开源许可
+除特殊注明外，本Repository均采用 Creative Commons [BY-NC-ND 4.0](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)（自由转载-保持署名-非商用-禁止演绎）协议发布。
