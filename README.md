@@ -7,16 +7,16 @@ QQ交流群：**5**069**5**11**5**
 
 ## 目录
 
-#### 1. [文档概述](#intro)
-#### 2. [基本信息](#profile)
-#### 3. [手册目录](#content)
-- [x] [Jsoup 输入与输出](/src/manual/cookbook/org/guideline/sections01/README.md)
-- [x] [Jsoup 输入输出设置的相关说明](/src/manual/cookbook/org/guideline/sections02/README.md)
+1. [文档概述](#intro)
+2. [基本信息](#profile)
+3. [手册目录](#content)
+   - [x] [Jsoup 输入与输出](/src/manual/cookbook/org/guideline/sections01/README.md)
+   - [x] [Jsoup 输入输出设置的相关说明](/src/manual/cookbook/org/guideline/sections02/README.md)
 
 
-#### 4. [参与贡献者](#contributors)
-#### 5. [交流讨论](#communication)
-#### 6. [版权声明](#copyright)
+4. [参与贡献者](#contributors)
+5. [交流讨论](#communication)
+6. [版权声明](#copyright)
 
 <a name="intro"></a>
 ## 文档概述
@@ -38,11 +38,11 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 
 ### Jsoup 输入与输出
 
-* Jsoup 输入
-	* [解析一个HTML字符串 （HTML代码片段）](#input01)
-	* [加载解析一个文件 （File）](#input02)
-	* [加载解析一个URL](#input03)
-	* 一个Inputstream 的输入流
+#### Jsoup 输入
+  1. [解析一个HTML字符串 （HTML代码片段）](#input01)
+  2. [加载解析一个文件 （File）](#input02)
+  3. [加载解析一个URL](#input03)
+  4. 一个Inputstream 的输入流
 
 **示例演示**
 
@@ -50,7 +50,7 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 **1. 解析解析html字符串**
 
 **代码示例：**
-```
+```java
 public static void jsoupIOTest01(){
 
     String htmlText = // " <html>" +
@@ -66,7 +66,7 @@ public static void jsoupIOTest01(){
 }
 ```
 **代码输出结果：**
-```
+```java
 <html>
  <head>
   <title>JsoupInputAndOutput</title>
@@ -83,7 +83,7 @@ Jsoup在解析代码片段的时候可以补全基本的html标准格式，即�
 **2. 加载解析一个html文件**
 
 **HTML文件：**
-```
+```html
 <!-- HTML file -->
 <!DOCTYPE html>
 <html>
@@ -101,7 +101,7 @@ Jsoup在解析代码片段的时候可以补全基本的html标准格式，即�
 ```
 
 **代码示例：**
-```
+```java
 public static void jsoupIOTest02() throws IOException{
 
     String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
@@ -117,7 +117,7 @@ public static void jsoupIOTest02() throws IOException{
 }
 ```
 **代码输出结果：**
-```
+```html
 https://github.com/img.jpg
 https://github.com/a.jpg
 ====================================
@@ -145,7 +145,7 @@ https://github.com/a.jpg
 **3. 加载解析一个URL**
 
 **代码示例：**
-```
+```java
 public static void jsoupIOTest03() {
     Document doc = null;
     try {
@@ -159,12 +159,13 @@ public static void jsoupIOTest03() {
 **解释说明:** connect(String url) 方法创建一个新的 Connection,timeout(int millis) 设置超时时间,userAgent(String userAgent)设置浏览器user-Agent的,userAgent更加详细的讲解可以参看:「[浏览器的UserAgent大全](http://blog.csdn.net/dietime1943/article/details/62433531)」关于和get() 取得和解析一个HTML文件。如果从该URL获取HTML时发生错误，便会抛出 IOException, 应适当的进行处理。  
 该示例为get()方式进行模拟浏览器进行提交,另一种方式为post()方式进行提交，详细参照：[模拟浏览器：post方式模拟登陆获取网页数据（二）](http://blog.csdn.net/dietime1943/article/details/73294442)
 
-**3. 加载解析一个数据流**
+**4. 加载解析一个数据流**
+
 基础API方法：`parse(InputStream in, String charsetName, String baseUri)`
 拓展API方法：` 	parse(InputStream in, String charsetName, String baseUri, Parser parser)`
 
 **代码示例01：** 读取一个流文件
-```
+```java
 public static void jsoupIOTest04_1() {
     // 效率最快的方式进行读文件成input流后，Jsoup进行解析。
     InputStream input = null;
@@ -180,7 +181,7 @@ public static void jsoupIOTest04_1() {
 }
 ```
 **代码示例02：** 另一种应用，加载一个URL转换成流，并且进行转码后利用Jsoup进行解析。
-```
+```java
 public static void jsoupIOTest04_2() {
     Document doc = null;
     String url = "http://www.csdn.net/";
