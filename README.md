@@ -38,7 +38,7 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 
 ### Jsoup 输入与输出
 
-#### Jsoup 输入
+#### Jsoup 的输入
   1. [加载解析一个HTML字符串 （HTML代码片段）](#input01)
   2. [加载解析一个文件（HTML File）](#input02)
   3. [加载解析一个URL](#input03)
@@ -67,12 +67,12 @@ public static void jsoupIOTest01(){
 **代码输出结果：**
 ```html
 <html>
- <head>
-  <title>JsoupInputAndOutput</title>
- </head>
- <body>
-  <h1>Hello World!</h1>  
- </body>
+  <head>
+    <title>JsoupInputAndOutput</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>  
+  </body>
 </html>
 ```
 从代码输出结果可以看出：
@@ -86,16 +86,16 @@ Jsoup在解析代码片段的时候可以补全基本的html标准格式，即�
 <!-- HTML file -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>JsoupInputTest</title>
-        <meta charset="UTF-8">
-    </head>
-    <!-- <base href="http://example.com" /> -->
-    <body>
-        <div id="mydiv">test parsing input file by jsoup</div>
-        <img src="/img.jpg">
-        <a href="/a.jpg">s1 test</a>
-    </body>
+  <head>
+     <title>JsoupInputTest</title>
+     <meta charset="UTF-8">
+  </head>
+  <!-- <base href="http://example.com" /> -->
+  <body>
+    <div id="mydiv">test parsing input file by jsoup</div>
+    <img src="/img.jpg">
+    <a href="/a.jpg">s1 test</a>
+  </body>
 </html>
 ```
 
@@ -136,7 +136,7 @@ https://github.com/a.jpg
  </body>
 </html>
 ```
-**示例总结：** 该示例使用了API`parse(File in, String charsetName, String baseUri)`
+**示例总结：** 该示例使用了Jsoup API：`parse(File in, String charsetName, String baseUri)`
 第三个参数为baseURI,就如同HTML文件中`<img src="/img.jpg">`在实际网站中，有的图片，
 超链接，js文件以及CSS会使用相对路径，使用Jsoup的该带有baseURI方法时，
 Jsoup会**隐式的**将该baseURI和相对路径进行拼接成一个完整的绝对路径，注意是隐式的，
@@ -166,8 +166,8 @@ public static void jsoupIOTest03() {
     }
 }
 ```
-**解释说明：** connect(String url) 方法创建一个新的 Connection,timeout(int millis) 
-设置超时时间,userAgent(String userAgent)设置浏览器user-Agent的,userAgent更加详细的
+**解释说明：** connect(String url) 方法创建一个新的 Connection，timeout(int millis) 
+设置超时时间，userAgent(String userAgent)设置浏览器user-Agent的，userAgent更加详细的
 讲解可以参看：「[浏览器的UserAgent大全](http://blog.csdn.net/dietime1943/article/details/62433531)」
 关于和get() 取得和解析一个HTML文件。如果从该URL获取HTML时发生错误，便会抛出 IOException，
 应适当的进行处理。该示例为get()方式进行模拟浏览器进行提交,另一种方式为post()方式进行提交，
@@ -214,7 +214,7 @@ public static void jsoupIOTest04_2() {
 这种方式进行转码。
 
 
-**相关数据输入方法**
+**相关数据输入的方法列表**
 * parse(String html)
 将输入的HTML解析为一个文档对象（Document）
 * parse(String html, String baseUri)
@@ -239,7 +239,7 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 等价于`parse(URL url, int timeoutMillis)`，只需要输入一个HTTP地址。
 返回`Connection`对象，通过`get()`或`post()`方法获取Dom对象。
 
-#### Jsoup 数据输出
+#### Jsoup 的数据输出
 **Jsoup Parser（Dom解析器） 将会去输入的HTML进行词法解析，修复HTML的完整性**
 * 严格的标签闭合 (比如： `<p>Lorem <p>Ipsum` parses to `<p>Lorem</p> <p>Ipsum</p>`)
 * 隐式标签 (比如. 它可以自动将 `<td>Table data</td>`包装成`<table><tr><td>?`)
