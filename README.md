@@ -1,17 +1,18 @@
 # Jsoup 开发指南/操作手册
 
+
 > *Read this in other languages: [English](README-en.md).*
 
-QQ交流群：**5**069**5**11**5**
-
+QQ交流群：**5**069**5**11**5** </br>
+Last update date：*11/27/2018 19:16*
 
 ## 目录
 
 1. [文档概述](#intro)
 2. [基本信息](#profile)
 3. [手册目录](#content)
-   - [x] [Jsoup 输入与输出](/src/manual/cookbook/org/guideline/sections01/README.md)
-   - [x] [Jsoup 输入输出设置的相关说明](/src/manual/cookbook/org/guideline/sections02/README.md)
+   - [x] [Jsoup 输入与输出](#input-output)
+   - [x] [Jsoup 模拟浏览器输入输出设置的相关说明](#simulation-setting)
 
 
 4. [参与贡献者](#contributors)
@@ -23,19 +24,12 @@ QQ交流群：**5**069**5**11**5**
 
 Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https://github.com/bluetata/jsoup-manual/issues) 提醒我修改相关内容。
 
-<a name="profile"></a>
-## 基本信息
-
-| 文档名称 | Jsoup-Manual / Jsoup开发手册                   |
-| ------- | --------------------------------------------- |
-| 当前版本 | v1.2 beta                                     |
-| 文档发起 | [bluetata](http://blog.csdn.net/dietime1943/) |
-| 参与人群 | Jimmy                                         |
-| 最后更新 | 2018/11/25                                    |
 
 <a name="content"></a>
 ## Jsoup手册
 
+
+<a name="input-output"></a>
 ### Jsoup 输入与输出
 
 #### Jsoup 的输入
@@ -49,6 +43,7 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 **1. 解析解析HTML字符串**
 
 **代码示例：**
+
 ```java
 public static void jsoupIOTest01(){
 
@@ -63,6 +58,7 @@ public static void jsoupIOTest01(){
     Document doc1 = Jsoup.parse(htmlText);
     System.out.println(doc1.html());
 }
+
 ```
 **代码输出结果：**
 ```html
@@ -100,6 +96,7 @@ Jsoup在解析代码片段的时候可以补全基本的html标准格式，即�
 ```
 
 **代码示例：**
+
 ```java
 public static void jsoupIOTest02() throws IOException{
 
@@ -115,6 +112,7 @@ public static void jsoupIOTest02() throws IOException{
     System.out.println(doc.html());
 }
 ```
+
 **代码输出结果：**
 ```html
 https://github.com/img.jpg
@@ -136,13 +134,14 @@ https://github.com/a.jpg
   </body>
 </html>
 ```
+
 **示例总结：** 该示例使用了Jsoup API：`parse(File in, String charsetName, String baseUri)`
 第三个参数为baseURI,就如同HTML文件中`<img src="/img.jpg">`在实际网站中，有的图片、
-超链接、js文件、CSS等会使用相对路径，使用Jsoup的带有baseURI方法时，
-Jsoup会**隐式的**将该<u>baseURI</u>和<u>其相对路径</u>进行拼接成一个完整的绝对路径，注意：这是隐式的，
-也就是说，它不会真正的改变输出的DOM对象，而是你在调用Jsoup 相关API 获取其超链接或者
-图片等地的时候，返回的Jsoup对象，会带有其和baseURI拼接后的完整链接，这也就是为什么我们看到
-打印结果中，获取的图片地址为完整的绝对路径，而打印的html仍然和html文件保持一致。
+超链接、js文件、CSS等会使用相对路径，使用Jsoup的带有baseURI方法时，Jsoup会**隐式的**
+将该<u>baseURI</u>和<u>其相对路径</u>进行拼接成一个完整的绝对路径，注意：这是隐式的，
+也就是说，它不会真正的改变输出的DOM对象，而是你在调用Jsoup 相关API 获取其超链接或者图片等
+的时候，返回的Jsoup对象会带有和baseURI拼接后的完整链接，这也就是为什么我们看到打印结果中，
+获取的图片地址为完整的绝对路径，而打印的html仍然和html文件保持一致。
 
 **另外：** 在HTML文件中如果已经有`<base href="http://example.com" />`指定了baseURI，
 那么**Jsoup会以原HTML文件中的URI为基准**，也就是说，如果原HTML中指定了URI那么即使你调用了
@@ -155,6 +154,7 @@ Jsoup会**隐式的**将该<u>baseURI</u>和<u>其相对路径</u>进行拼接�
 **3. 加载解析一个URL**
 
 **代码示例：**
+
 ```java
 public static void jsoupIOTest03() {
     Document doc = null;
@@ -166,7 +166,8 @@ public static void jsoupIOTest03() {
     }
 }
 ```
-**解释说明：** connect(String url) 方法创建一个新的 Connection，timeout(int millis) 
+
+**解释说明：** connect(String url) 方法创建一个新的 Connection，timeout(int millis)
 设置超时时间，userAgent(String userAgent)设置浏览器user-Agent的，userAgent更加详细的
 讲解可以参看：「[浏览器的UserAgent大全](http://blog.csdn.net/dietime1943/article/details/62433531)」
 关于和get() 取得和解析一个HTML文件。如果从该URL获取HTML时发生错误，便会抛出 IOException，
@@ -181,6 +182,7 @@ public static void jsoupIOTest03() {
 拓展API方法：`parse(InputStream in, String charsetName, String baseUri, Parser parser)`
 
 **代码示例01：** 读取一个流文件
+
 ```java
 public static void jsoupIOTest04_1() {
     // 效率最快的方式进行读文件成input流后，Jsoup进行解析。
@@ -196,7 +198,9 @@ public static void jsoupIOTest04_1() {
     System.out.println(doc);  
 }
 ```
+
 **代码示例02：** 另一种应用，加载一个URL转换成流，并且进行转码后利用Jsoup进行解析。
+
 ```java
 public static void jsoupIOTest04_2() {
     Document doc = null;
@@ -209,6 +213,7 @@ public static void jsoupIOTest04_2() {
     System.out.println(doc);  
 }
 ```
+
 **示例总结：** 两种方法都是通过parse方法来加载流，并且在加载流的过程中，进行了相应的
 转码操作，这里应该尽量避免使用`new String(doc.getBytes("ISO8859-1"), "UTF-8")`
 这种方式进行转码。
@@ -247,7 +252,46 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 * HTML 实体转义($、<、> 转化为HTML格式)
 * 隐式的以uri为base补全html中相对RUL
 
-### Jsoup 输入输出设置的相关说明
+
+
+<a name="simulation-setting"></a>
+### Jsoup 模拟浏览器输入输出设置的相关说明
+
+### Jsoup模拟浏览器：Jsoup.connect(String url) 的相关设置
+**Jsoup.connect（String url） 接受一个URL，通过`get()`和`post（）`方法返回dom对象。**
+**相关主要设置说明**
+* **userAgent(String userAgent)**
+设置user-Agent，让被访问网站相信这个请求是在一个真实的浏览器访问。
+* **ignoreContentType(boolean ignoreContentType)**
+默认情况下，Jsoup只允许使用HTML和XML内容类型的工作,你需要为了与其他内容类型,需要指定为true。
+* **followRedirects(boolean followRedirects)**
+设置重定向是否跳转，默认值为true,即为此次访问会redirect到重定向后的地址。
+* **proxy(Proxy proxy)**
+设置代理。
+* **timeout(int millis)**
+请求的超时时间。默认为：30000 millis。
+* **parser(Parser parser)**
+Jsoup 提供`Parser.xmlParser()`和`Parser.htmlParser()`两种类型的解析器。
+默认为：`Parser.htmlParser()`。如果要解析XML，如RSS或Atom，需要改变解析器类型的XML
+解析器，否则将无法正常工作。
+* **data(String key, String value)**
+请求参数，利用该方法可以直接绑定网页提交参数，cookie，session，url上get提交的参数等。
+* **get(),post()**
+设置get和post请求方式。
+
+
+### Document.OutputSettings 输出设置  
+该操作输出的类为：org.jsoup.nodes.Document.OutputSettings
+* Character set
+**获取/设置 输出文档字符集**
+* Escape mode
+**获得/设置  HTML的转义输出模式（escape mode）**
+* Indentation
+**获取/设置 输出缩进数(空格数)**
+* Outline
+**打开/关闭 HTML outline mode**
+* Pretty print
+**打开/关闭  pretty printing mode**
 
 
 
