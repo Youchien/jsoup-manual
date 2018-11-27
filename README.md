@@ -258,8 +258,10 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 ### Jsoup 模拟浏览器输入输出设置的相关说明
 
 #### Jsoup模拟浏览器：Jsoup.connect(String url) 的相关设置
-**Jsoup.connect（String url）接受一个URL，通过`get()`和`post（）`方法返回dom对象。**</br>
-**相关主要设置说明**
+`Jsoup.connect(String url)` 模拟浏览器访问一个URL，通过`get()`或`post()`
+方式返回dom对象。</br>
+
+**相关主要设置说明：**
 * `userAgent(String userAgent)`
 设置user-Agent，让被访问网站相信这个请求是在一个真实的浏览器访问。
 * `ignoreContentType(boolean ignoreContentType)`
