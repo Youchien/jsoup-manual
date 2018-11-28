@@ -306,4 +306,4 @@ cookie，session，url上get提交的参数等。
 
 <a name="license"></a>
 ## 开源许可
-除特殊注明外，本Repository均采用 Creative Commons [BY-NC-ND 4.0](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)（自由转载-保持署名-非商用-禁止演绎）协议发布。
+[MIT](LICENSE)
