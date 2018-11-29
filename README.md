@@ -306,4 +306,7 @@ cookie，session，url上get提交的参数等。
 
 <a name="license"></a>
 ## 开源许可
-[MIT](LICENSE)
+
+Copyright (c) *bluetata*(Sekito.Lv@gmail.com). All rights reserved.
+
+Licensed under the [MIT](LICENSE) License.
