@@ -27,7 +27,6 @@ import org.jsoup.nodes.Document.OutputSettings.Syntax;
 import org.jsoup.nodes.Entities.EscapeMode;
 import org.jsoup.parser.Parser;
 
-import java.io.IOException;
 
 /**
  * 通常，开发者使用Jsoup的默认选项

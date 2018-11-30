@@ -20,6 +20,10 @@ Last update date：11/27/2018 19:16
    - [x] [Jsoup 模拟浏览器设置选项的相关说明](#simulation-option)
         - [浏览器设置选项](#setting-option01)
         - [浏览器设置选项](#setting-option02)
+   - [ ] [Jsoup Dom 操作](#)
+   - [ ] [Jsoup 的循环遍历](#)
+   - [ ] [jsoup 防止XSS攻击](#)
+   - [ ] [Jsoup Utils](#)
 
 4. [参与贡献者](#contributors)
 5. [交流讨论](#communication)
