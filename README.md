@@ -12,14 +12,14 @@ Last update date：11/27/2018 19:16
 2. [基本信息](#profile)
 3. [手册目录](#content)
    - [x] [Jsoup 解析方式与数据的输入和输出](#input-output)
-         - 1. [加载解析一个HTML字符串 （HTML代码片段）](#input01)
-         - 2. [加载解析一个文件（HTML File）](#input02)
-         - 3. [加载解析一个URL](#input03)
-         - 4. [加载解析Inputstream输入流](#input04)
-         - 5. [Jsoup 的数据输出](#output01)
+        - [加载解析一个HTML字符串 （HTML代码片段）](#input01)
+        - [加载解析一个文件（HTML File）](#input02)
+        - [加载解析一个URL](#input03)
+        - [加载解析Inputstream输入流](#input04)
+        - [Jsoup 的数据输出](#output01)
    - [x] [Jsoup 模拟浏览器设置选项的相关说明](#simulation-option)
-         - 1. [浏览器设置选项](#setting-option01)
-         - 2. [浏览器设置选项](#setting-option02)
+        - [浏览器设置选项](#setting-option01)
+        - [浏览器设置选项](#setting-option02)
 
 4. [参与贡献者](#contributors)
 5. [交流讨论](#communication)
@@ -265,6 +265,8 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 
 <a name="simulation-option"></a>
 ### Jsoup 模拟浏览器设置选项的相关说明
+
+> 本节所有源代码 [点击这里](/src/main/java/org/jsoup/manual/sections02)
 
 <a name="setting-option01"></a>
 #### Jsoup模拟浏览器：`Jsoup.connect(String url)` 的相关选项设置
