@@ -12,8 +12,14 @@ Last update date：11/27/2018 19:16
 2. [基本信息](#profile)
 3. [手册目录](#content)
    - [x] [Jsoup 解析方式与数据的输入和输出](#input-output)
+         - 1. [加载解析一个HTML字符串 （HTML代码片段）](#input01)
+         - 2. [加载解析一个文件（HTML File）](#input02)
+         - 3. [加载解析一个URL](#input03)
+         - 4. [加载解析Inputstream输入流](#input04)
+         - 5. [Jsoup 的数据输出](#output01)
    - [x] [Jsoup 模拟浏览器设置选项的相关说明](#simulation-option)
-
+         - 1. [浏览器设置选项](#setting-option01)
+         - 2. [浏览器设置选项](#setting-option02)
 
 4. [参与贡献者](#contributors)
 5. [交流讨论](#communication)
@@ -31,6 +37,8 @@ Last update date：11/27/2018 19:16
 
 <a name="input-output"></a>
 ### Jsoup 解析方式与数据的输入和输出
+
+> 本节所有源代码 [点击这里](/src/main/java/org/jsoup/manual/sections01)
 
 #### 解析方式与数据的输入
   1. [加载解析一个HTML字符串 （HTML代码片段）](#input01)
@@ -100,7 +108,7 @@ Jsoup在解析代码片段的时候可以补全基本的html标准格式，即�
 ```java
 public static void jsoupIOTest02() throws IOException{
 
-    String fileName = "../jsoup-manual-cookbook/src/manual/resources/section01.html";
+    String fileName = "../jsoup-manual/src/manual/resources/section01.html";
     File in = new File(fileName);
     Document doc = Jsoup.parse(in, "UTF-8", "https://github.com/");
 
@@ -244,6 +252,8 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 等价于`parse(URL url, int timeoutMillis)`，只需要输入一个HTTP地址。
 返回`Connection`对象，通过`get()`或`post()`方法获取Dom对象。
 
+
+<a name="output01"></a>
 #### Jsoup 的数据输出
 **Jsoup Parser（Dom解析器） 将会去输入的HTML进行词法解析，修复HTML的完整性**
 * 严格的标签闭合 (比如： `<p>Lorem <p>Ipsum` parses to `<p>Lorem</p> <p>Ipsum</p>`)
@@ -253,11 +263,11 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 * 隐式的以uri为base补全html中相对RUL
 
 
-
 <a name="simulation-option"></a>
 ### Jsoup 模拟浏览器设置选项的相关说明
 
-#### Jsoup模拟浏览器：`Jsoup.connect(String url)` 的相关设置
+<a name="setting-option01"></a>
+#### Jsoup模拟浏览器：`Jsoup.connect(String url)` 的相关选项设置
 `Jsoup.connect(String url)` 模拟浏览器访问一个URL，通过`get()`或`post()`
 方式返回dom对象。</br>
 
@@ -280,6 +290,7 @@ cookie，session，url上get提交的参数等。
 * `get(), post()` 设置get和post请求方式。
 
 
+<a name="setting-option02"></a>
 #### Jsoup输出 `Document.OutputSettings` 设置选项
 该操作输出的类为：**org.jsoup.nodes.Document.OutputSettings**</br>
 * `charset` 设置 输出文档字符集，默认为UTF-8
@@ -289,7 +300,33 @@ cookie，session，url上get提交的参数等。
 * `prettyPrint` 打开/关闭  pretty printing mode，默认为：true
 * `syntax` 设置对象输出的语法，要么是带有空标签或者boolean属性的html，要么是自带闭合的xml。
 
+```java
+    public static void jsoupOption01() throws Exception{
+        String url = "http://sample.com/";
 
+        // 设置输入选项。将一个URL 地址内容转换为文档对象(Document)
+        Document doc = Jsoup.connect(url)
+                .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36")                             // 无默认值
+                .ignoreContentType(false)    // 默认为：false
+                .timeout(5 * 1000)           // 默认为： 3000
+                .parser(Parser.htmlParser()) // 默认为：Parser.htmlParser()
+                .data("key", "value")        // 无默认值
+                .post();                     // post请求
+
+        // 设置输出选项
+        Document.OutputSettings settings = new Document.OutputSettings();
+        settings.charset("utf-8")            // 字符集为UTF-8   默认为：UTF-8
+                .indentAmount(4)             // 4个空格缩进     默认为：1
+                .outline(true)               // 自动换行        默认：false
+                .escapeMode(EscapeMode.base) // 转义模式        默认为：Entities.EscapeMode.base
+                .prettyPrint(true)           // 优雅输出        默认为：true
+                .syntax(Syntax.html);        // 指定输出语法    HTML/XML
+
+        doc = doc.outputSettings(settings);
+
+        System.out.println(doc.html());
+    }
+```
 
 
 <a name="contributors"></a>
