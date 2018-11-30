@@ -11,8 +11,8 @@ Last update date：11/27/2018 19:16
 1. [文档概述](#intro)
 2. [基本信息](#profile)
 3. [手册目录](#content)
-   - [x] [Jsoup 输入与输出](#input-output)
-   - [x] [Jsoup 模拟浏览器输入输出设置的相关说明](#simulation-setting)
+   - [x] [Jsoup 解析方式与数据的输入和输出](#input-output)
+   - [x] [Jsoup 模拟浏览器设置选项的相关说明](#simulation-option)
 
 
 4. [参与贡献者](#contributors)
@@ -22,7 +22,7 @@ Last update date：11/27/2018 19:16
 <a name="intro"></a>
 ## 文档概述
 
-Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https://github.com/bluetata/jsoup-manual/issues) 提醒我修改相关内容。
+本 Repo.手册为Jsoup相关操作的说明，意为对Jsoup使用者及爬虫行业的同学提供资料参考。  
 
 
 <a name="content"></a>
@@ -30,9 +30,9 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 
 
 <a name="input-output"></a>
-### Jsoup 输入与输出
+### Jsoup 解析方式与数据的输入和输出
 
-#### Jsoup 的输入
+#### 解析方式与数据的输入
   1. [加载解析一个HTML字符串 （HTML代码片段）](#input01)
   2. [加载解析一个文件（HTML File）](#input02)
   3. [加载解析一个URL](#input03)
@@ -40,7 +40,7 @@ Jsoup经验总结；如果出现链接失效等情况，可提交 [Issues](https
 
 
 <a name="input01"></a>
-**1. 解析解析HTML字符串**
+**1. 加载解析一个HTML字符串 （HTML代码片段）**
 
 **代码示例：**
 
@@ -254,10 +254,10 @@ HTML解析器即`Parser.htmlParser`,XML解析器`Parser.xmlParser`。
 
 
 
-<a name="simulation-setting"></a>
-### Jsoup 模拟浏览器输入输出设置的相关说明
+<a name="simulation-option"></a>
+### Jsoup 模拟浏览器设置选项的相关说明
 
-#### Jsoup模拟浏览器：Jsoup.connect(String url) 的相关设置
+#### Jsoup模拟浏览器：`Jsoup.connect(String url)` 的相关设置
 `Jsoup.connect(String url)` 模拟浏览器访问一个URL，通过`get()`或`post()`
 方式返回dom对象。</br>
 
@@ -280,13 +280,14 @@ cookie，session，url上get提交的参数等。
 * `get(), post()` 设置get和post请求方式。
 
 
-#### Document.OutputSettings 输出设置  
-该操作输出的类为：org.jsoup.nodes.Document.OutputSettings</br>
-* Character set 获取/设置 输出文档字符集</br>
-* Escape mode 获得/设置  HTML的转义输出模式（escape mode）</br>
-* Indentation 获取/设置 输出缩进数(空格数)</br>
-* Outline 打开/关闭 HTML outline mode</br>
-* Pretty print 打开/关闭  pretty printing mode</br>
+#### Jsoup输出 `Document.OutputSettings` 设置选项
+该操作输出的类为：**org.jsoup.nodes.Document.OutputSettings**</br>
+* `charset` 设置 输出文档字符集，默认为UTF-8
+* `escapeMode` 设置 HTML的转义输出模式，默认为：Entities.EscapeMode.base
+* `indentAmount` 设置 输出缩进数(空格数)，默认为：indentAmount(1)，一个空格
+* `outline` 打开/关闭 自动换行，默认为false
+* `prettyPrint` 打开/关闭  pretty printing mode，默认为：true
+* `syntax` 设置对象输出的语法，要么是带有空标签或者boolean属性的html，要么是自带闭合的xml。
 
 
 
