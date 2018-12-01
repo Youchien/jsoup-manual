@@ -351,6 +351,6 @@ cookie，session，url上get提交的参数等。
 <a name="license"></a>
 ## 开源许可
 
-Copyright (c) *bluetata*(Sekito.Lv@gmail.com). All rights reserved.
+Copyright (c) Sekito Lv(bluetata) <sekito.lv@gmail.com> All rights reserved.
 
 Licensed under the [MIT](LICENSE) License.
