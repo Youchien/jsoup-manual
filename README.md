@@ -22,7 +22,8 @@ Last update date：11/27/2018 19:16
         - [浏览器设置选项](#setting-option02)
    - [ ] [Jsoup Dom 操作](#)
    - [ ] [Jsoup 的循环遍历](#)
-   - [ ] [jsoup 防止XSS攻击](#)
+   - [ ] [jsoup 防止XSS攻击](#xss)
+   - [ ] [使用HtmlUnit + Jsoup解析js动态生成的网页](#)
    - [ ] [Jsoup Utils](#)
 
 4. [参与贡献者](#contributors)
@@ -336,7 +337,7 @@ cookie，session，url上get提交的参数等。
 
 
 
-<a name="input-output"></a>
+<a name="xss"></a>
 ### 使用Jsoup消除不受信任的HTML (防止XSS攻击)
 
 
@@ -364,13 +365,73 @@ static String clean(String strHTML, Whitelist whitelist)
     该API在保留basic()中允许出现的标签的同时也允许出现图片(img tag)和img的相关适当属性，且其src允许其指定 http 或 https。
 
   **5)**： relaxed()
-    该API仅会保留 *a, b, blockquote, br, caption, cite, code, col, colgroup, dd, div, dl, dt, em, h1, h2, h3, h4, h5, h6, i, img, li, ol, p, pre, q, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, u, ul 标签，除此之外的所有HTML标签都会被清除，且在超链接中不会强制追加rel=nofollow属性。
+    该API仅会保留 *a, b, blockquote, br, caption, cite, code, col, colgroup, dd, div, dl, dt, em, h1, h2, h3, h4, h5, h6, i, img, li, ol, p, pre, q, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, u, ul* 标签，除此之外的所有HTML标签都会被清除，且在超链接中不会强制追加rel=nofollow属性。
 
 
 > “Jsoup提供了默认的5个白名单过滤器，在此基础上你也可以进行过滤器的扩展和自定义，方法见下文”
 
 
 #### 2. 如何使用Whitelist过滤器进行清除HTML标签操作
+
+创建适当Whitelist对象，使用`clean`方法进行清除HTML标签操作，示例代码如下：
+```java
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
+ 
+public class JsoupWhitelist {
+ 
+    public static void main(String[] args) {
+        String strHTML = "<html>" +
+                "<head>" +
+                "<title> Clean HTML By Jsoup Whitelist</title>" +
+                "</head>" +
+                "<body bgcolor=\"000000\">" +
+                "<center><img src=\"image.jpg\" align=\"bottom\"> </center>" +
+                "<hr>" +
+                "<a href=\"http://blog.csdn.net/dietime1943\">bluetata</a>" +
+                "<h1>heading tags H1</h1>" +
+                "<h2>heading tags H2</h2>" +
+                "My email link <a href=\"mailto:sekito.lv@gmail.com\">" +
+                "sekito.lv@gmail.com</a>." +
+                "<p>Para tag</p>" +
+                "<p><b>bold paragraph</b>" +
+                "<br><b><i>bold italics text.</i></b>" +
+                "<hr>Horizontal line" +
+                "</body>" +
+                "</html>";
+        
+        //clean HTML using none whitelist (remove all HTML tags)
+        String cleanedHTML = Jsoup.clean(strHTML, Whitelist.none());
+        System.out.println("None whitelist");
+        System.out.println(cleanedHTML);
+ 
+        System.out.println("===================================");
+        
+        //clean HTML using relaxed whitelist
+        cleanedHTML = Jsoup.clean(strHTML, Whitelist.relaxed());
+        System.out.println("Relaxed whitelist");
+        System.out.println(cleanedHTML);
+    }
+}
+```
+
+控制台打印结果：
+
+```
+None whitelist
+Clean HTML By Jsoup Whitelist bluetataheading tags H1heading tags H2My email link dietime1943@gmail.com.Para tagbold paragraphbold italics text.Horizontal line
+===================================
+Relaxed whitelist
+Clean HTML By Jsoup Whitelist
+<img align="bottom"> 
+<a href="http://blog.csdn.net/dietime1943">bluetata</a>
+<h1>heading tags H1</h1>
+<h2>heading tags H2</h2>My email link 
+<a href="mailto:dietime1943@gmail.com">dietime1943@gmail.com</a>.
+<p>Para tag</p>
+<p><b>bold paragraph</b><br><b><i>bold italics text.</i></b></p>Horizontal line
+```
+
 
 
 <a name="contributors"></a>
