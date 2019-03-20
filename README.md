@@ -2,7 +2,8 @@
 
 > _Read this in other languages:_ [_English_](https://github.com/bluetata/jsoup-manual/tree/326d5d51c313693e1334dc48993c19b578cadbd9/README-en.md)_._
 
-**Jsoup** QQ交流群：**5**069**5**11**5** &lt;/br&gt; Last update date：11/27/2018 19:16
+**Jsoup** QQ交流群：50695115   
+Last update date：03/20/2019 18:01
 
 ## 目录
 
